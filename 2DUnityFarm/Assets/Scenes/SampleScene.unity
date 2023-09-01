@@ -416,7 +416,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &817623333
 GameObject:
@@ -768,7 +768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &817623338
 MonoBehaviour:
@@ -832,7 +832,7 @@ Transform:
   m_Children:
   - {fileID: 347848460}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &933067125
 MonoBehaviour:
@@ -853,3 +853,164 @@ MonoBehaviour:
   PrefabFolder: Assets/Prefab
   Tilemap: {fileID: 347848462}
   Pen: {fileID: 11400000, guid: cf4c0b349c4801b49aba5df6a8282b43, type: 2}
+--- !u!1 &1032641096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1032641098}
+  - component: {fileID: 1032641097}
+  m_Layer: 0
+  m_Name: PlantController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1032641097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032641096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ba397ed47bb994a8f0c9fc2bcbb0e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: ProjectindieFarm
+  ScriptName: PlantController
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Prefab
+--- !u!4 &1032641098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032641096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.811262, y: 2.413183, z: -0.8758071}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1363602687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363602689}
+  - component: {fileID: 1363602688}
+  m_Layer: 0
+  m_Name: ResController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1363602688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363602687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40d5fd6599581f43a6843869a132c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Namespace: ProjectindieFarm
+  ScriptName: ResController
+  ScriptsFolder: Assets/Scripts/Game
+  GeneratePrefab: 0
+  PrefabFolder: Assets/Prefab
+  SeedPrefab: {fileID: 5897076235313781362, guid: f96d4886d823e9f41b6e3d2ac042692b, type: 3}
+  WaterPrefab: {fileID: 3183066881392053381, guid: 8be979c871ccb954da51d2b387cc3358, type: 3}
+  SmallPlantPrefab: {fileID: 3947116691735070244, guid: bb8838d9edbc8d4459f251622f13b707, type: 3}
+  RipePrefab: {fileID: 3823132070117097577, guid: 262f0e4f93e91a24383b3fc6a9945c09, type: 3}
+  PlantPrefab: {fileID: 1379908884685372279, guid: 83819742d13eebb4e9fdb437e5b1990e, type: 3}
+  SeedSprite: {fileID: 21300000, guid: 46175959d9f21b54ba296f911c6e6645, type: 3}
+  SmallPlantSprite: {fileID: 21300000, guid: 2ba252dae0790db4dab2abb15da1ec00, type: 3}
+  RipeSprite: {fileID: 21300000, guid: 7598dbea71f3363459250d2ce69aad8c, type: 3}
+--- !u!4 &1363602689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363602687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1124607, y: 0.45998597, z: -1.2308081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2002361788
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04918921
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.1876442
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 29728079934248049, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141628757965238518, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+      propertyPath: m_Name
+      value: TileSelect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}

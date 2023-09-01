@@ -15,15 +15,15 @@ MonoBehaviour:
   CurrentTask:
     ShowLog: 0
     Status: 1
-    GameObject: {fileID: 9141628757965238518, guid: 0bed62604022d44478fc5a11a5397eaa, type: 3}
+    GameObject: {fileID: 1379908884685372279, guid: 83819742d13eebb4e9fdb437e5b1990e, type: 3}
     From: 0
     NameToFullName: []
     BindInfos: []
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: TileSelectController
+    ClassName: Plant
     Namespace: ProjectindieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace ProjectindieFarm\r\n{\r\n\tpublic
-      partial class TileSelectController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class Plant : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:fb5cd63f-d38e-4a3f-bc56-02d88025edf8\r\nusing UnityEngine;\r\n\r\nnamespace
-      ProjectindieFarm\r\n{\r\n\tpublic partial class TileSelectController\r\n\t{\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:1e701e92-cde2-4ef0-b895-b80b62774544\r\nusing UnityEngine;\r\n\r\nnamespace
+      ProjectindieFarm\r\n{\r\n\tpublic partial class Plant\r\n\t{\r\n\r\n\t}\r\n}\r\n"

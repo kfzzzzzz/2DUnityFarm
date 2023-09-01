@@ -8,5 +8,7 @@ namespace ProjectindieFarm
         public bool HasPlant { get; set; } = false;
 
         public bool watered { get; set; } = false;
+
+        public PlantStates PlantState { get; set; } = PlantStates.Seed;
     }
 }

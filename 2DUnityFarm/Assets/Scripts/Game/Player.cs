@@ -15,19 +15,37 @@ namespace ProjectindieFarm
 
 			Global.Days.Register(day =>
 			{
-				var seeds = SceneManager.GetActiveScene().GetRootGameObjects().Where(gamObj => gamObj.name.StartsWith("seed"));
-				foreach (var seed in seeds) {
+				var soilDatas = FindObjectOfType<GridController>().ShowGrid;
 
-					var tilePos = Grid.WorldToCell(seed.transform.position);
-
-					var tileData = FindObjectOfType<GridController>().ShowGrid[tilePos.x, tilePos.y];
-
-					if (tileData != null && tileData.watered) {
-						ResController.instance.SmallPlantPrefab.Instantiate().Position(seed.transform.position);
-						seed.DestroySelf();
+				PlantController.Instance.Plants.ForEach((x, y, plant) =>
+				{
+					if (plant) {
+						if (soilDatas[x, y].watered)
+						{
+							switch (plant.State)
+							{
+								case PlantStates.Seed:
+									plant.SetState(PlantStates.SmallPlant);
+									break;
+								case PlantStates.SmallPlant:
+									plant.SetState(PlantStates.Ripe);
+									break;
+								case PlantStates.Ripe:
+									break;
+							}
+						}
 					}
+				});
 
-				};
+				soilDatas.ForEach(soilData => {
+					if (soilData != null) {
+						soilData.watered = false;
+					}
+				});
+				foreach (var water in SceneManager.GetActiveScene().GetRootGameObjects().Where(gamObj => gamObj.name.StartsWith("water"))) {
+					water.DestroySelf();
+				}
+
 			}).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}
 
@@ -70,7 +88,11 @@ namespace ProjectindieFarm
 				//plant the seed
 				else if (grid[cellPosition.x, cellPosition.y].HasPlant != true)
 				{
-					ResController.instance.SeedPrefab.Instantiate().Position(tileWorldPos);
+					var plantGameObj = ResController.instance.PlantPrefab.Instantiate().Position(tileWorldPos);
+					var plant = plantGameObj.GetComponent<Plant>();
+					plant.XCell = cellPosition.x;
+					plant.YCell = cellPosition.y;
+					PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
 
 					grid[cellPosition.x, cellPosition.y].HasPlant = true;
 				}
