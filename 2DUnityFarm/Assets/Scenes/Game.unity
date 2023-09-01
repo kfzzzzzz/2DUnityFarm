@@ -935,14 +935,12 @@ MonoBehaviour:
   ScriptsFolder: Assets/Scripts/Game
   GeneratePrefab: 0
   PrefabFolder: Assets/Prefab
-  SeedPrefab: {fileID: 5897076235313781362, guid: f96d4886d823e9f41b6e3d2ac042692b, type: 3}
   WaterPrefab: {fileID: 3183066881392053381, guid: 8be979c871ccb954da51d2b387cc3358, type: 3}
-  SmallPlantPrefab: {fileID: 3947116691735070244, guid: bb8838d9edbc8d4459f251622f13b707, type: 3}
-  RipePrefab: {fileID: 3823132070117097577, guid: 262f0e4f93e91a24383b3fc6a9945c09, type: 3}
   PlantPrefab: {fileID: 1379908884685372279, guid: 83819742d13eebb4e9fdb437e5b1990e, type: 3}
   SeedSprite: {fileID: 21300000, guid: 46175959d9f21b54ba296f911c6e6645, type: 3}
   SmallPlantSprite: {fileID: 21300000, guid: 2ba252dae0790db4dab2abb15da1ec00, type: 3}
   RipeSprite: {fileID: 21300000, guid: 7598dbea71f3363459250d2ce69aad8c, type: 3}
+  OldSprite: {fileID: 21300000, guid: 4c8d8f6433662734f80b3b276d26b89e, type: 3}
 --- !u!4 &1363602689
 Transform:
   m_ObjectHideFlags: 0

@@ -56,7 +56,13 @@ namespace ProjectindieFarm
 			GUILayout.BeginHorizontal();
 			GUILayout.Space(10);
 			GUILayout.Label("天数："+ Global.Days.Value);
+			GUILayout.Space(10);
+			GUILayout.Label("果子：" + Global.FruitCount.Value);
+			GUILayout.Space(10);
+			GUILayout.Label($"当前工具：{Constant.DisplayName(Global.CurrentTool)}");
 			GUILayout.EndHorizontal();
+
+			GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1]手 [2]铁锹 [3]种子 [4]花洒");
         }
 
         private void Update()
@@ -73,20 +79,26 @@ namespace ProjectindieFarm
 			tileWorldPos.x += Grid.cellSize.x * 0.5f;
 			tileWorldPos.y += Grid.cellSize.y * 0.5f;
 
-			TileSelectController.Instance.Position(tileWorldPos);
+			//if (Global.CurrentTool == Constant.TOOL_SHOVEL && grid[cellPosition.x,cellPosition.y] == null) {
+				TileSelectController.Instance.Position(tileWorldPos);
+			//	TileSelectController.Instance.Show();
+			//}
+			//else {
+			//	TileSelectController.Instance.Hide();
+			//}
 
 
 			// 
 			if (Input.GetMouseButtonDown(0))
 			{
 				//explore the filed 
-				if (grid[cellPosition.x, cellPosition.y] == null)
+				if (grid[cellPosition.x, cellPosition.y] == null && Global.CurrentTool == Constant.TOOL_SHOVEL)
 				{
 					Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
 					grid[cellPosition.x, cellPosition.y] = new SoilData();
 				}
 				//plant the seed
-				else if (grid[cellPosition.x, cellPosition.y].HasPlant != true)
+				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant != true && Global.CurrentTool == Constant.TOOL_SEED)
 				{
 					var plantGameObj = ResController.instance.PlantPrefab.Instantiate().Position(tileWorldPos);
 					var plant = plantGameObj.GetComponent<Plant>();
@@ -96,9 +108,18 @@ namespace ProjectindieFarm
 
 					grid[cellPosition.x, cellPosition.y].HasPlant = true;
 				}
-				// nothing to do
-				else { 
-
+				else if (grid[cellPosition.x, cellPosition.y] != null && !grid[cellPosition.x, cellPosition.y].watered && Global.CurrentTool == Constant.TOOL_WARTING_SCAN) 
+				{
+					ResController.instance.WaterPrefab.Instantiate().Position(tileWorldPos);
+					grid[cellPosition.x, cellPosition.y].watered = true;
+				}
+				// get the fruit
+				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant && grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe && Global.CurrentTool == Constant.TOOL_HAND)
+				{
+					Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
+					grid[cellPosition.x, cellPosition.y].HasPlant = false;
+					//PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Old);
+					Global.FruitCount.Value++;
 				}
 			}
 
@@ -112,17 +133,25 @@ namespace ProjectindieFarm
 				}
 			}
 
-			if (Input.GetKeyDown(KeyCode.E))
-			{
-				//explore the filed 
-				if (grid[cellPosition.x, cellPosition.y] != null)
-				{
-					if (!grid[cellPosition.x, cellPosition.y].watered) {
-						ResController.instance.WaterPrefab.Instantiate().Position(tileWorldPos);
+			if (Input.GetKeyDown(KeyCode.Return)) {
+				SceneManager.LoadScene("GamePass");
+			}
 
-						grid[cellPosition.x, cellPosition.y].watered = true;
-					}
-				}
+			if (Input.GetKeyDown(KeyCode.Alpha1)) 
+			{
+				Global.CurrentTool.Value = Constant.TOOL_HAND;
+			}
+			if (Input.GetKeyDown(KeyCode.Alpha2))
+			{
+				Global.CurrentTool.Value = Constant.TOOL_SHOVEL;
+			}
+			if (Input.GetKeyDown(KeyCode.Alpha3))
+			{
+				Global.CurrentTool.Value = Constant.TOOL_SEED;
+			}
+			if (Input.GetKeyDown(KeyCode.Alpha4))
+			{
+				Global.CurrentTool.Value = Constant.TOOL_WARTING_SCAN;
 			}
 		}
     }

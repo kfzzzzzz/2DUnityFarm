@@ -28,6 +28,9 @@ namespace ProjectindieFarm
 					case PlantStates.Ripe:
 						GetComponent<SpriteRenderer>().sprite = ResController.instance.RipeSprite;
 						break;
+					case PlantStates.Old:
+						GetComponent<SpriteRenderer>().sprite = ResController.instance.OldSprite;
+						break;
 					default:
 						GetComponent<SpriteRenderer>().sprite = ResController.instance.SeedSprite;
 						break;
