@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using QFramework;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
@@ -55,14 +55,14 @@ namespace ProjectindieFarm
 			GUILayout.Space(10);
 			GUILayout.BeginHorizontal();
 			GUILayout.Space(10);
-			GUILayout.Label("ÌìÊı£º"+ Global.Days.Value);
+			GUILayout.Label("å¤©æ•°ï¼š"+ Global.Days.Value);
 			GUILayout.Space(10);
-			GUILayout.Label("¹û×Ó£º" + Global.FruitCount.Value);
+			GUILayout.Label("æœå­ï¼š" + Global.FruitCount.Value);
 			GUILayout.Space(10);
-			GUILayout.Label($"µ±Ç°¹¤¾ß£º{Constant.DisplayName(Global.CurrentTool)}");
+			GUILayout.Label($"å½“å‰å·¥å…·ï¼š{Constant.DisplayName(Global.CurrentTool)}");
 			GUILayout.EndHorizontal();
 
-			GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1]ÊÖ [2]ÌúÇÂ [3]ÖÖ×Ó [4]»¨È÷");
+			GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1]æ‰‹ [2]é“é”¹ [3]ç§å­ [4]èŠ±æ´’");
         }
 
         private void Update()

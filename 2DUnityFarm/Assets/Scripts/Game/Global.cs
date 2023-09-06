@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using QFramework;
 using UnityEngine;
@@ -23,13 +23,13 @@ namespace ProjectindieFarm {
         public static string DisplayName(string tool) {
             switch (tool) {
                 case TOOL_HAND:
-                    return "ÊÖ";
+                    return "æ‰‹";
                 case TOOL_SHOVEL:
-                    return "ÌúÇÂ";
+                    return "é“é”¹";
                 case TOOL_SEED:
-                    return "ÖÖ×Ó";
+                    return "ç§å­";
                 case TOOL_WARTING_SCAN:
-                    return "»¨È÷";
+                    return "èŠ±æ´’";
             }
 
             return string.Empty;
