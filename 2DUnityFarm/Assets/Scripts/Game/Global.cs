@@ -11,6 +11,15 @@ namespace ProjectindieFarm {
         public static BindableProperty<int> FruitCount = new BindableProperty<int>(0);
 
         public static BindableProperty<string> CurrentTool = new BindableProperty<string>(Constant.TOOL_HAND);
+
+        public static BindableProperty<int> RipeCountAndHarvestInCurrentDay = new BindableProperty<int>(0);
+
+        public static List<Challenge> Challenges = new List<Challenge>()
+        {
+
+        };
+
+        public static EasyEvent<Plant> onPlantHarvest = new EasyEvent<Plant>();
     }
 
     public class Constant 
@@ -23,13 +32,13 @@ namespace ProjectindieFarm {
         public static string DisplayName(string tool) {
             switch (tool) {
                 case TOOL_HAND:
-                    return "ÊÖ";
+                    return "æ‰‹";
                 case TOOL_SHOVEL:
-                    return "ÌúÇÂ";
+                    return "é“é”¹";
                 case TOOL_SEED:
-                    return "ÖÖ×Ó";
+                    return "ç§å­";
                 case TOOL_WARTING_SCAN:
-                    return "»¨È÷";
+                    return "æ°´æ´’";
             }
 
             return string.Empty;

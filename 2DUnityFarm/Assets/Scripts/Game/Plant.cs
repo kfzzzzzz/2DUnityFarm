@@ -12,6 +12,8 @@ namespace ProjectindieFarm
 
 		public PlantStates State => mState;
 
+		public int RipeDay = -1;
+
 		public void SetState(PlantStates newState) 
 		{
 			if (newState != mState)
@@ -27,6 +29,7 @@ namespace ProjectindieFarm
 						break;
 					case PlantStates.Ripe:
 						GetComponent<SpriteRenderer>().sprite = ResController.instance.RipeSprite;
+						RipeDay = Global.Days.Value;
 						break;
 					case PlantStates.Old:
 						GetComponent<SpriteRenderer>().sprite = ResController.instance.OldSprite;

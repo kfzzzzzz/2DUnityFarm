@@ -9,12 +9,13 @@ namespace ProjectindieFarm
 	public partial class Player : ViewController
 	{
 		public Grid Grid;
-		public Tilemap Tilemap;
+        public Tilemap Tilemap;
 		void Start()
 		{
 
 			Global.Days.Register(day =>
 			{
+                Global.RipeCountAndHarvestInCurrentDay.Value = 0;
 				var soilDatas = FindObjectOfType<GridController>().ShowGrid;
 
 				PlantController.Instance.Plants.ForEach((x, y, plant) =>
@@ -55,14 +56,15 @@ namespace ProjectindieFarm
 			GUILayout.Space(10);
 			GUILayout.BeginHorizontal();
 			GUILayout.Space(10);
-			GUILayout.Label("ÌìÊı£º"+ Global.Days.Value);
+			GUILayout.Label("å¤©æ•°ï¼š"+ Global.Days.Value);
 			GUILayout.Space(10);
-			GUILayout.Label("¹û×Ó£º" + Global.FruitCount.Value);
+			GUILayout.Label("æ°´æœï¼š" + Global.FruitCount.Value);
 			GUILayout.Space(10);
-			GUILayout.Label($"µ±Ç°¹¤¾ß£º{Constant.DisplayName(Global.CurrentTool)}");
-			GUILayout.EndHorizontal();
+			GUILayout.Label($"ç›®å‰å·¥å…·ï¼š{Constant.DisplayName(Global.CurrentTool)}");
+            GUILayout.EndHorizontal();
 
-			GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1]ÊÖ [2]ÌúÇÂ [3]ÖÖ×Ó [4]»¨È÷");
+			GUI.skin = null;
+			GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1]æ‰‹ [2]é“é”¹ [3]ç§å­ [4]èŠ±æ´’");
         }
 
         private void Update()
@@ -120,6 +122,9 @@ namespace ProjectindieFarm
 					grid[cellPosition.x, cellPosition.y].HasPlant = false;
 					//PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Old);
 					Global.FruitCount.Value++;
+					if (PlantController.Instance.Plants[cellPosition.x, cellPosition.y].RipeDay == Global.Days.Value) {
+						Global.RipeCountAndHarvestInCurrentDay.Value++;
+					}
 				}
 			}
 
