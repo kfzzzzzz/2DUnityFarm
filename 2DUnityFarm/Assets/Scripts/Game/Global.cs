@@ -11,6 +11,17 @@ namespace ProjectindieFarm {
         public static BindableProperty<int> FruitCount = new BindableProperty<int>(0);
 
         public static BindableProperty<string> CurrentTool = new BindableProperty<string>(Constant.TOOL_HAND);
+
+        public static BindableProperty<int> RipeCountAndHarvestInCurrentDay = new BindableProperty<int>(0);
+
+        public static List<Challenge> Challenges = new List<Challenge>() { 
+            new ChallengeRipeAndHarvestTwoFruitsInOneDay()
+        
+        };
+
+        public static EasyEvent<Plant> OnPlantHarvest = new EasyEvent<Plant>();
+
+        public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
     }
 
     public class Constant 

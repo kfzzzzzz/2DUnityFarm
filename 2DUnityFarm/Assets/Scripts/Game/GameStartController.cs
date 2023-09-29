@@ -8,7 +8,7 @@ namespace ProjectindieFarm
 	{
 		void Start()
 		{
-			// Code Here
+
 		}
 
         private void Update()

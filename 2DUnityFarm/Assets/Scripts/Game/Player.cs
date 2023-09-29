@@ -15,6 +15,7 @@ namespace ProjectindieFarm
 
 			Global.Days.Register(day =>
 			{
+				Global.RipeCountAndHarvestInCurrentDay.Value = 0;
 				var soilDatas = FindObjectOfType<GridController>().ShowGrid;
 
 				PlantController.Instance.Plants.ForEach((x, y, plant) =>
@@ -116,6 +117,7 @@ namespace ProjectindieFarm
 				// get the fruit
 				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant && grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe && Global.CurrentTool == Constant.TOOL_HAND)
 				{
+					Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);
 					Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
 					grid[cellPosition.x, cellPosition.y].HasPlant = false;
 					//PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Old);
