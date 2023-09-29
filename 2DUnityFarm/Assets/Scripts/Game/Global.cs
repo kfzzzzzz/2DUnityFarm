@@ -14,9 +14,10 @@ namespace ProjectindieFarm {
 
         public static BindableProperty<int> RipeCountAndHarvestInCurrentDay = new BindableProperty<int>(0);
 
-        public static List<Challenge> Challenges = new List<Challenge>() { 
-            new ChallengeRipeAndHarvestTwoFruitsInOneDay()
-        
+        public static List<Challenge> Challenges = new List<Challenge>() {
+            new ChallengeHavestFirstFruit(),
+            new ChallengeRipeAndHarvestTwoFruitsInOneDay(),
+            new ChallengeRipeAndHarvestFiveFruitsInOneDay()
         };
 
         public static EasyEvent<Plant> OnPlantHarvest = new EasyEvent<Plant>();

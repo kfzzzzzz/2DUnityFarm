@@ -9,9 +9,24 @@ namespace ProjectindieFarm
 	{
 		void Start()
 		{
+            Global.OnPlantHarvest.Register(plant =>
+            {
+                if (plant.RipeDay == Global.Days.Value)
+                {
+                    Global.RipeCountAndHarvestInCurrentDay.Value++;
+                }
+            }).UnRegisterWhenGameObjectDestroyed(this);
+
             Global.OnChallengeFinish.Register(challenge =>
             {
                 Debug.Log("KFZTEST:" + challenge.GetType().Name + "Íê³É");
+
+                if (Global.Challenges.All(challenge => challenge.State == Challenge.States.Finished)) {
+                    ActionKit.Delay(0.5f, () =>
+                    {
+                        SceneManager.LoadScene("GamePass");
+                    }).Start(this);
+                }
             }).UnRegisterWhenGameObjectDestroyed(gameObject);
 		}
 
