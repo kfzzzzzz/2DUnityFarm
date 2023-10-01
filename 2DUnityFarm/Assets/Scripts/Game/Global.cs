@@ -20,6 +20,17 @@ namespace ProjectindieFarm {
             new ChallengeRipeAndHarvestFiveFruitsInOneDay()
         };
 
+        public static List<Challenge> ActiveChallenges = new List<Challenge>() {
+
+        };
+
+        public static List<Challenge> FinishedChallenges = new List<Challenge>()
+        {
+
+        };
+
+
+
         public static EasyEvent<Plant> OnPlantHarvest = new EasyEvent<Plant>();
 
         public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();

@@ -15,7 +15,7 @@ namespace ProjectindieFarm
         }
         public override bool CheckFinish()
         {
-            return Global.RipeCountAndHarvestInCurrentDay >= 5;
+            return Global.RipeCountAndHarvestInCurrentDay >= 5 && Global.Days.Value != StartDate;
         }
 
         public override void OnFinish()

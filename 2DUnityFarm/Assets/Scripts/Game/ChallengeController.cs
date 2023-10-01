@@ -15,15 +15,16 @@ namespace ProjectindieFarm
 
 			GUI.Label(new Rect(960 - 300, 0, 300, 20), "ÃÙ’Ω");
 
-			for (var i = 0;i < Global.Challenges.Count; i++) {
-				var challenage = Global.Challenges[i];
-				if (challenage.State == Challenge.States.Finished){
-					GUI.Label(new Rect(960 - 300, 20 + i * 26, 300, 20), "<color=green>" + challenage.Name + "</color>");
-				}
-				else {
-					GUI.Label(new Rect(960 - 300, 20 + i * 26, 300, 20), "<color=red>" + challenage.Name + "</color>");
-				}
+			for (var i = 0;i < Global.ActiveChallenges.Count; i++) {
+				var challenage = Global.ActiveChallenges[i];
+				GUI.Label(new Rect(960 - 300, 20 + i * 26, 300, 20), challenage.Name);
 			}
-        }
+
+			for (var i = 0; i < Global.FinishedChallenges.Count; i++)
+			{
+				var challenage = Global.FinishedChallenges[i];
+				GUI.Label(new Rect(960 - 300, 20 + i * 26 + Global.ActiveChallenges.Count * 26, 300, 20), "<color=green>" + challenage.Name + "</color>");
+			}
+		}
     }
 }
