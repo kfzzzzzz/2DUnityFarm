@@ -70,6 +70,7 @@ namespace ProjectindieFarm
         {
 			if (Input.GetKeyDown(KeyCode.F)) {
 				Global.Days.Value++;
+				AudioController.get.SfxNextDay.Play();
 			}
 
 			var cellPosition = Grid.WorldToCell(transform.position);
@@ -109,11 +110,13 @@ namespace ProjectindieFarm
 					PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
 
 					grid[cellPosition.x, cellPosition.y].HasPlant = true;
+					AudioController.get.SfxSeed.Play();
 				}
 				else if (grid[cellPosition.x, cellPosition.y] != null && !grid[cellPosition.x, cellPosition.y].watered && Global.CurrentTool == Constant.TOOL_WARTING_SCAN) 
 				{
 					ResController.instance.WaterPrefab.Instantiate().Position(tileWorldPos);
 					grid[cellPosition.x, cellPosition.y].watered = true;
+					AudioController.get.SfxWater.Play();
 				}
 				// get the fruit
 				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant && grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe && Global.CurrentTool == Constant.TOOL_HAND)
@@ -123,6 +126,7 @@ namespace ProjectindieFarm
 					grid[cellPosition.x, cellPosition.y].HasPlant = false;
 					//PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Old);
 					Global.FruitCount.Value++;
+					AudioController.get.SfxPlantHarvest.Play();
 				}
 			}
 

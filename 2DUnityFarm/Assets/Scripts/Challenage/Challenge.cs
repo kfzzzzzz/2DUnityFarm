@@ -18,6 +18,8 @@ namespace ProjectindieFarm
         public abstract string Name { get; }
         public abstract void OnStart();
         public abstract bool CheckFinish();
-        public abstract void OnFinish();
+        public virtual void OnFinish() {
+            AudioController.get.SfxChallengeCompleted.Play();
+        }
     }
 }
