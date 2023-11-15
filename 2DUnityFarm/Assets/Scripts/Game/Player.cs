@@ -97,6 +97,7 @@ namespace ProjectindieFarm
 				{
 					Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
 					grid[cellPosition.x, cellPosition.y] = new SoilData();
+					AudioController.get.SfxShovelDig.Play();
 				}
 				//plant the seed
 				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant != true && Global.CurrentTool == Constant.TOOL_SEED)
@@ -142,18 +143,22 @@ namespace ProjectindieFarm
 			if (Input.GetKeyDown(KeyCode.Alpha1)) 
 			{
 				Global.CurrentTool.Value = Constant.TOOL_HAND;
+				AudioController.get.SfxTake.Play();
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha2))
 			{
 				Global.CurrentTool.Value = Constant.TOOL_SHOVEL;
+				AudioController.get.SfxTake.Play();
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha3))
 			{
 				Global.CurrentTool.Value = Constant.TOOL_SEED;
+				AudioController.get.SfxTake.Play();
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha4))
 			{
 				Global.CurrentTool.Value = Constant.TOOL_WARTING_SCAN;
+				AudioController.get.SfxTake.Play();
 			}
 		}
     }
