@@ -10,9 +10,13 @@ namespace ProjectindieFarm
 	{
 		public Grid Grid;
 		public Tilemap Tilemap;
-		void Start()
-		{
 
+        private void Awake()
+        {
+			Global.Player = this;
+		}
+        void Start()
+		{
 			Global.Days.Register(day =>
 			{
 				Global.RipeCountAndHarvestInCurrentDay.Value = 0;
@@ -59,8 +63,8 @@ namespace ProjectindieFarm
 			GUILayout.Label("天数："+ Global.Days.Value);
 			GUILayout.Space(10);
 			GUILayout.Label("果子：" + Global.FruitCount.Value);
-			GUILayout.Space(10);
-			GUILayout.Label($"当前工具：{Constant.DisplayName(Global.CurrentTool)}");
+			//GUILayout.Space(10);
+			//GUILayout.Label($"当前工具：{Constant.DisplayName(Global.CurrentTool)}");
 			GUILayout.EndHorizontal();
 
 			//GUI.Label(new Rect(10, 360 - 24, 200, 24), "[1]手 [2]铁锹 [3]种子 [4]花洒");
@@ -144,5 +148,11 @@ namespace ProjectindieFarm
 				SceneManager.LoadScene("GamePass");
 			}
 		}
+
+        private void OnDestroy()
+        {
+			Global.Player = null;
+        }
+
     }
 }

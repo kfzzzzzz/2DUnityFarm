@@ -1,5 +1,6 @@
 using UnityEngine;
 using QFramework;
+using UnityEngine.UI;
 
 namespace ProjectindieFarm
 {
@@ -7,46 +8,62 @@ namespace ProjectindieFarm
 	{
 		void Start()
 		{
+			HideAllSelect();
+			Btn1Select.Show();
+			Global.Player.ToolIcon.sprite = Btn1Icon.sprite;
 			Btn1.onClick.AddListener(() =>
 			{
-				ChangeTool(Constant.TOOL_HAND);
+				ChangeTool(Constant.TOOL_HAND, Btn1Select, Btn1Icon.sprite);
 			});
 			Btn2.onClick.AddListener(() =>
 			{
-				ChangeTool(Constant.TOOL_SHOVEL);
+				ChangeTool(Constant.TOOL_SHOVEL, Btn2Select, Btn2Icon.sprite);
 			});
 			Btn3.onClick.AddListener(() =>
 			{
-				ChangeTool(Constant.TOOL_SEED);
+				ChangeTool(Constant.TOOL_SEED, Btn3Select, Btn3Icon.sprite);
 			});
 			Btn4.onClick.AddListener(() =>
 			{
-				ChangeTool(Constant.TOOL_WARTING_SCAN);
+				ChangeTool(Constant.TOOL_WARTING_SCAN, Btn4Select, Btn4Icon.sprite);
 			});
 		}
 
-		void ChangeTool(string tool) {
+		void HideAllSelect()
+		{
+			Btn1Select.Hide();
+			Btn2Select.Hide();
+			Btn3Select.Hide();
+			Btn4Select.Hide();
+		}
+
+		void ChangeTool(string tool, Image selectImage, Sprite icon) {
 			Global.CurrentTool.Value = tool;
 			AudioController.get.SfxTake.Play();
+
+			HideAllSelect();
+
+			selectImage.Show();
+			Global.Player.ToolIcon.sprite = icon;
 		}
 
         private void Update()
         {
 			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{
-				ChangeTool(Constant.TOOL_HAND);
+				ChangeTool(Constant.TOOL_HAND, Btn1Select, Btn1Icon.sprite);
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha2))
 			{
-				ChangeTool(Constant.TOOL_SHOVEL);
+				ChangeTool(Constant.TOOL_SHOVEL, Btn2Select, Btn2Icon.sprite);
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha3))
 			{
-				ChangeTool(Constant.TOOL_SEED);
+				ChangeTool(Constant.TOOL_SEED, Btn3Select, Btn3Icon.sprite);
 			}
 			if (Input.GetKeyDown(KeyCode.Alpha4))
 			{
-				ChangeTool(Constant.TOOL_WARTING_SCAN);
+				ChangeTool(Constant.TOOL_WARTING_SCAN, Btn4Select, Btn4Icon.sprite);
 			}
 		}
     }

@@ -34,6 +34,8 @@ namespace ProjectindieFarm {
         public static EasyEvent<Plant> OnPlantHarvest = new EasyEvent<Plant>();
 
         public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
+
+        public static Player Player = null;
     }
 
     public class Constant 

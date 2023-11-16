@@ -22,22 +22,50 @@ MonoBehaviour:
     - TypeName: UnityEngine.UI.Button
       PathToRoot: Btn1
       MemberName: Btn1
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn1/Btn1Icon
+      MemberName: Btn1Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn1/Btn1Select
+      MemberName: Btn1Select
     - TypeName: UnityEngine.UI.Button
       PathToRoot: Btn2
       MemberName: Btn2
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn2/Btn2Icon
+      MemberName: Btn2Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn2/Btn2Select
+      MemberName: Btn2Select
     - TypeName: UnityEngine.UI.Button
       PathToRoot: Btn3
       MemberName: Btn3
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn3/Btn3Icon
+      MemberName: Btn3Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn3/Btn3Select
+      MemberName: Btn3Select
     - TypeName: UnityEngine.UI.Button
       PathToRoot: Btn4
       MemberName: Btn4
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn4/Btn4Icon
+      MemberName: Btn4Icon
+    - TypeName: UnityEngine.UI.Image
+      PathToRoot: Btn4/Btn4Select
+      MemberName: Btn4Select
     ScriptsFolder: Assets/Scripts/Game
     ClassName: UIToolBar
     Namespace: ProjectindieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace ProjectindieFarm\r\n{\r\n\tpublic
       partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:4e4ed1cd-f72c-4dd2-825f-9982b7039798\r\nusing UnityEngine;\r\n\r\nnamespace
+    DesignerCode: "// Generate Id:4519fe28-5e69-4a7a-8ea5-d792e80299a4\r\nusing UnityEngine;\r\n\r\nnamespace
       ProjectindieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button Btn1;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn2;\r\n\r\n\t\tpublic
-      UnityEngine.UI.Button Btn3;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn4;\r\n\r\n\t}\r\n}\r\n"
+      UnityEngine.UI.Button Btn1;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn1Icon;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn1Select;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn2;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn2Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn2Select;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button Btn3;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn3Icon;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn3Select;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn4;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Image Btn4Icon;\r\n\r\n\t\tpublic UnityEngine.UI.Image Btn4Select;\r\n\r\n\t}\r\n}\r\n"
