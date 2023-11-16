@@ -19,37 +19,25 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos:
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxTake
-      MemberName: SfxTake
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxShovelDig
-      MemberName: SfxShovelDig
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxNextDay
-      MemberName: SfxNextDay
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxPlantHarvest
-      MemberName: SfxPlantHarvest
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxWater
-      MemberName: SfxWater
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxChallengeCompleted
-      MemberName: SfxChallengeCompleted
-    - TypeName: UnityEngine.AudioSource
-      PathToRoot: SfxSeed
-      MemberName: SfxSeed
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn1
+      MemberName: Btn1
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn2
+      MemberName: Btn2
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn3
+      MemberName: Btn3
+    - TypeName: UnityEngine.UI.Button
+      PathToRoot: Btn4
+      MemberName: Btn4
     ScriptsFolder: Assets/Scripts/Game
-    ClassName: AudioController
+    ClassName: UIToolBar
     Namespace: ProjectindieFarm
     MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace ProjectindieFarm\r\n{\r\n\tpublic
-      partial class AudioController : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
+      partial class UIToolBar : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
-    DesignerCode: "// Generate Id:bf933762-c282-4746-b1e5-f4de7c0b897b\r\nusing UnityEngine;\r\n\r\nnamespace
-      ProjectindieFarm\r\n{\r\n\tpublic partial class AudioController\r\n\t{\r\n\r\n\t\tpublic
-      UnityEngine.AudioSource SfxTake;\r\n\r\n\t\tpublic UnityEngine.AudioSource
-      SfxShovelDig;\r\n\r\n\t\tpublic UnityEngine.AudioSource SfxNextDay;\r\n\r\n\t\tpublic
-      UnityEngine.AudioSource SfxPlantHarvest;\r\n\r\n\t\tpublic UnityEngine.AudioSource
-      SfxWater;\r\n\r\n\t\tpublic UnityEngine.AudioSource SfxChallengeCompleted;\r\n\r\n\t\tpublic
-      UnityEngine.AudioSource SfxSeed;\r\n\r\n\t}\r\n}\r\n"
+    DesignerCode: "// Generate Id:4e4ed1cd-f72c-4dd2-825f-9982b7039798\r\nusing UnityEngine;\r\n\r\nnamespace
+      ProjectindieFarm\r\n{\r\n\tpublic partial class UIToolBar\r\n\t{\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button Btn1;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn2;\r\n\r\n\t\tpublic
+      UnityEngine.UI.Button Btn3;\r\n\r\n\t\tpublic UnityEngine.UI.Button Btn4;\r\n\r\n\t}\r\n}\r\n"
