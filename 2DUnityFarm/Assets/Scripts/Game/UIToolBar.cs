@@ -10,7 +10,7 @@ namespace ProjectindieFarm
 		{
 			HideAllSelect();
 			Btn1Select.Show();
-			Global.Player.ToolIcon.sprite = Btn1Icon.sprite;
+			Global.mouse.Icon.sprite = Btn1Icon.sprite;
 			Btn1.onClick.AddListener(() =>
 			{
 				ChangeTool(Constant.TOOL_HAND, Btn1Select, Btn1Icon.sprite);
@@ -44,7 +44,7 @@ namespace ProjectindieFarm
 			HideAllSelect();
 
 			selectImage.Show();
-			Global.Player.ToolIcon.sprite = icon;
+			Global.mouse.Icon.sprite = icon;
 		}
 
         private void Update()

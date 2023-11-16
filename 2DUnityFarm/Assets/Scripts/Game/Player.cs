@@ -86,7 +86,6 @@ namespace ProjectindieFarm
 			tileWorldPos.y += Grid.cellSize.y * 0.5f;
 
 			//if (Global.CurrentTool == Constant.TOOL_SHOVEL && grid[cellPosition.x,cellPosition.y] == null) {
-				TileSelectController.Instance.Position(tileWorldPos);
 			//	TileSelectController.Instance.Show();
 			//}
 			//else {
@@ -94,45 +93,37 @@ namespace ProjectindieFarm
 			//}
 
 
-			// 
-			if (Input.GetMouseButtonDown(0))
-			{
-				//explore the filed 
-				if (grid[cellPosition.x, cellPosition.y] == null && Global.CurrentTool == Constant.TOOL_SHOVEL)
-				{
-					Tilemap.SetTile(cellPosition, FindObjectOfType<GridController>().Pen);
-					grid[cellPosition.x, cellPosition.y] = new SoilData();
-					AudioController.get.SfxShovelDig.Play();
-				}
-				//plant the seed
-				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant != true && Global.CurrentTool == Constant.TOOL_SEED)
-				{
-					var plantGameObj = ResController.instance.PlantPrefab.Instantiate().Position(tileWorldPos);
-					var plant = plantGameObj.GetComponent<Plant>();
-					plant.XCell = cellPosition.x;
-					plant.YCell = cellPosition.y;
-					PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
+			//// 
+			//if (Input.GetMouseButtonDown(0))
+			//{
+			//	if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant != true && Global.CurrentTool == Constant.TOOL_SEED)
+			//	{
+			//		var plantGameObj = ResController.instance.PlantPrefab.Instantiate().Position(tileWorldPos);
+			//		var plant = plantGameObj.GetComponent<Plant>();
+			//		plant.XCell = cellPosition.x;
+			//		plant.YCell = cellPosition.y;
+			//		PlantController.Instance.Plants[cellPosition.x, cellPosition.y] = plant;
 
-					grid[cellPosition.x, cellPosition.y].HasPlant = true;
-					AudioController.get.SfxSeed.Play();
-				}
-				else if (grid[cellPosition.x, cellPosition.y] != null && !grid[cellPosition.x, cellPosition.y].watered && Global.CurrentTool == Constant.TOOL_WARTING_SCAN) 
-				{
-					ResController.instance.WaterPrefab.Instantiate().Position(tileWorldPos);
-					grid[cellPosition.x, cellPosition.y].watered = true;
-					AudioController.get.SfxWater.Play();
-				}
-				// get the fruit
-				else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant && grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe && Global.CurrentTool == Constant.TOOL_HAND)
-				{
-					Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);
-					Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
-					grid[cellPosition.x, cellPosition.y].HasPlant = false;
-					//PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Old);
-					Global.FruitCount.Value++;
-					AudioController.get.SfxPlantHarvest.Play();
-				}
-			}
+			//		grid[cellPosition.x, cellPosition.y].HasPlant = true;
+			//		AudioController.get.SfxSeed.Play();
+			//	}
+			//	else if (grid[cellPosition.x, cellPosition.y] != null && !grid[cellPosition.x, cellPosition.y].watered && Global.CurrentTool == Constant.TOOL_WARTING_SCAN) 
+			//	{
+			//		ResController.instance.WaterPrefab.Instantiate().Position(tileWorldPos);
+			//		grid[cellPosition.x, cellPosition.y].watered = true;
+			//		AudioController.get.SfxWater.Play();
+			//	}
+			//	// get the fruit
+			//	else if (grid[cellPosition.x, cellPosition.y] != null && grid[cellPosition.x, cellPosition.y].HasPlant && grid[cellPosition.x, cellPosition.y].PlantState == PlantStates.Ripe && Global.CurrentTool == Constant.TOOL_HAND)
+			//	{
+			//		Global.OnPlantHarvest.Trigger(PlantController.Instance.Plants[cellPosition.x, cellPosition.y]);
+			//		Destroy(PlantController.Instance.Plants[cellPosition.x, cellPosition.y].gameObject);
+			//		grid[cellPosition.x, cellPosition.y].HasPlant = false;
+			//		//PlantController.Instance.Plants[cellPosition.x, cellPosition.y].SetState(PlantStates.Old);
+			//		Global.FruitCount.Value++;
+			//		AudioController.get.SfxPlantHarvest.Play();
+			//	}
+			//}
 
 
 			if (Input.GetMouseButtonDown(1))

@@ -36,6 +36,8 @@ namespace ProjectindieFarm {
         public static EasyEvent<Challenge> OnChallengeFinish = new EasyEvent<Challenge>();
 
         public static Player Player = null;
+
+        public static ToolController mouse = null;
     }
 
     public class Constant 
