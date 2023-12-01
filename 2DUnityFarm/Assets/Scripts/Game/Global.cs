@@ -46,6 +46,7 @@ namespace ProjectindieFarm {
         public const string TOOL_SHOVEL = "shovel";
         public const string TOOL_SEED = "seed";
         public const string TOOL_WARTING_SCAN = "watering_scan";
+        public const string TOOL_SEED_RADISH = "seed_radish";
 
         public static string DisplayName(string tool) {
             switch (tool) {
@@ -57,6 +58,8 @@ namespace ProjectindieFarm {
                     return "种子";
                 case TOOL_WARTING_SCAN:
                     return "花洒";
+                case TOOL_SEED_RADISH:
+                    return "萝卜";
             }
 
             return string.Empty;
