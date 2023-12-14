@@ -58,7 +58,7 @@ namespace ProjectindieFarm
                         mShowGrid[cellPos.x, cellPos.y] = new SoilData();
                         AudioController.get.SfxShovelDig.Play();
                     }
-                    else if (mShowGrid[cellPos.x, cellPos.y] != null && mShowGrid[cellPos.x, cellPos.y].HasPlant != true && Global.CurrentTool == Constant.TOOL_SEED)
+                    else if (mShowGrid[cellPos.x, cellPos.y] != null && mShowGrid[cellPos.x, cellPos.y].HasPlant != true && (Global.CurrentTool == Constant.TOOL_SEED || Global.CurrentTool == Constant.TOOL_SEED_RADISH))
                     {
                         var plantGameObj = ResController.instance.PlantPrefab.Instantiate().Position(tileWorldPos);
                         var plant = plantGameObj.GetComponent<Plant>();
